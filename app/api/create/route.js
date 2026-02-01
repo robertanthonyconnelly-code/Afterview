@@ -2,10 +2,10 @@ import { NextResponse } from "next/server";
 import { createAfterview } from "../../../lib/store";
 
 export async function POST(req) {
-  let body = {};
+  let body;
 
-  // Only accept FormData (most reliable in App Router)
   try {
+    // ONLY read FormData — no JSON parsing at all
     const form = await req.formData();
     body = Object.fromEntries(form.entries());
   } catch {
