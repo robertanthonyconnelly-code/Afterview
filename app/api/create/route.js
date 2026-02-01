@@ -5,7 +5,6 @@ export async function POST(req) {
   let body;
 
   try {
-    // ONLY read FormData — no JSON parsing at all
     const form = await req.formData();
     body = Object.fromEntries(form.entries());
   } catch {
