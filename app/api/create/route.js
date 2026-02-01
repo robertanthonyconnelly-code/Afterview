@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
 
 export async function POST() {
-  return NextResponse.json({
-    ok: true,
-    token: "TEST123"
-  });
+  return NextResponse.json({ ok: true, token: "TEST123" });
 }
