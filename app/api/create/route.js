@@ -6,7 +6,7 @@ export async function POST(req) {
     const ct = req.headers.get("content-type") || "";
     let body = {};
 
-    // Accept JSON OR form submissions (super robust)
+    // Support JSON AND form submits
     if (ct.includes("application/json")) {
       body = await req.json();
     } else if (ct.includes("multipart/form-data") || ct.includes("application/x-www-form-urlencoded")) {
